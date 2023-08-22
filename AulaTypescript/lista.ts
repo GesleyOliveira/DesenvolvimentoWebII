@@ -51,7 +51,7 @@ let anos:number = leitor.question("Entre com a sua idade em anos: ");
 let meses:number = leitor.question("Entre com os meses restantes: ");
 let dias:number = leitor.question("Entre com os dias restantes: ");
 let somaIdade = (anos * 365) + (meses * 30) + Number((dias));
-console.log(`A sua idade em dias são: ${somaIdade} dias`)*/
+console.log(`A sua idade em dias são: ${somaIdade} dias`)
 
 // 9.
 let totalEleitores:number = leitor.question("Entre com o numero total de eleitores: ");
@@ -65,6 +65,22 @@ console.log(`O total de eleitores é: ${totalEleitores}`);
 console.log(`O percentual de votos brancos é: ${percBrancos}%`);
 console.log(`O percentual de votos nulos é: ${percNulos}%`);
 console.log(`O percentual de votos validos é: ${percValidos}%`);
+
+// 10.
+let salarioMensal:number = leitor.question("Entre com o seu salario atual: ");
+let perReajuste:number = leitor.question("Entre com o percentual de reajuste: ");
+let novoSalario = (salarioMensal * (perReajuste / 100)) + Number(salarioMensal);
+console.log(`O novo salário é de R$ ${novoSalario},00`);
+
+// 11.
+let custoFabrica:number = leitor.question("Entre com o valor do custo de fabrica do veiculo: ");
+let perDistri = custoFabrica * (28/100);
+let perImposto = custoFabrica * (45/100);
+let custoFinal = Number(custoFabrica) + Number(perDistri) + Number(perImposto);
+console.log(`O valor final do veiculo é de R$ ${custoFinal},00`)*/
+
+// 12.
+
 
 
 

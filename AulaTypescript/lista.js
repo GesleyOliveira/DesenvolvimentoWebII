@@ -51,16 +51,29 @@ let anos:number = leitor.question("Entre com a sua idade em anos: ");
 let meses:number = leitor.question("Entre com os meses restantes: ");
 let dias:number = leitor.question("Entre com os dias restantes: ");
 let somaIdade = (anos * 365) + (meses * 30) + Number((dias));
-console.log(`A sua idade em dias são: ${somaIdade} dias`)*/
+console.log(`A sua idade em dias são: ${somaIdade} dias`)
+
 // 9.
-var totalEleitores = leitor.question("Entre com o numero total de eleitores: ");
-var votosBrancos = leitor.question("Entre com o numero de votos em branco: ");
-var votosNulos = leitor.question("Entre com o numero de votos nulos: ");
-var votosValidos = leitor.question("Entre com o numero de votos validos: ");
-var percBrancos = (votosBrancos * 100) / Number(totalEleitores);
-var percNulos = (votosNulos * 100) / Number(totalEleitores);
-var percValidos = (votosValidos * 100) / Number(totalEleitores);
-console.log("O total de eleitores \u00E9: ".concat(totalEleitores));
-console.log("O percentual de votos brancos \u00E9: ".concat(percBrancos, "%"));
-console.log("O percentual de votos nulos \u00E9: ".concat(percNulos, "%"));
-console.log("O percentual de votos validos \u00E9: ".concat(percValidos, "%"));
+let totalEleitores:number = leitor.question("Entre com o numero total de eleitores: ");
+let votosBrancos:number = leitor.question("Entre com o numero de votos em branco: ");
+let votosNulos:number = leitor.question("Entre com o numero de votos nulos: ");
+let votosValidos:number = leitor.question("Entre com o numero de votos validos: ");
+let percBrancos = (votosBrancos * 100) / Number(totalEleitores);
+let percNulos = (votosNulos * 100) / Number(totalEleitores);
+let percValidos = (votosValidos * 100) / Number(totalEleitores);
+console.log(`O total de eleitores é: ${totalEleitores}`);
+console.log(`O percentual de votos brancos é: ${percBrancos}%`);
+console.log(`O percentual de votos nulos é: ${percNulos}%`);
+console.log(`O percentual de votos validos é: ${percValidos}%`);
+
+// 10.
+let salarioMensal:number = leitor.question("Entre com o seu salario atual: ");
+let perReajuste:number = leitor.question("Entre com o percentual de reajuste: ");
+let novoSalario = (salarioMensal * (perReajuste / 100)) + Number(salarioMensal);
+console.log(`O novo salário é de R$ ${novoSalario},00`);*/
+// 11.
+var custoFabrica = leitor.question("Entre com o valor do custo de fabrica do veiculo: ");
+var perDistri = custoFabrica * (28 / 100);
+var perImposto = custoFabrica * (45 / 100);
+var custoFinal = Number(custoFabrica) + Number(perDistri) + Number(perImposto);
+console.log("O valor final do veiculo \u00E9 de R$ ".concat(custoFinal, ",00"));
