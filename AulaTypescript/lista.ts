@@ -84,7 +84,7 @@ let quantidadeCarros:number = leitor.question("Entre com a quantidade de carros 
 let valorTotalVendas:number = leitor.question("Entre com o valor total de vendas: R$ ");
 let salarioFixo:number = leitor.question("Entre com o salário fixo: R$ ");
 let valorCarroVendido:number = leitor.question("Entre com o valor recebido por carro vendido: R$ ");
-let comissao 
+let vendaTotal = salarioFixo + Number((quantidadeCarros * valorCarroVendido)) + 
 
 
 
