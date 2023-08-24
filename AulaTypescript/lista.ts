@@ -1,6 +1,6 @@
 // 1. 
 var leitor = require("readline-sync");
-/*let nome:String = leitor.question("Digite o nome: ");
+let nome:String = leitor.question("Digite o nome: ");
 let endereco:String = leitor.question("Digite o endereco: ");
 let telefone:Number = leitor.question("Digite o telefone: ");
 console.log(`Nome: ${nome}, Endereco: ${endereco}, Telefone: ${telefone}`)
@@ -77,10 +77,14 @@ let custoFabrica:number = leitor.question("Entre com o valor do custo de fabrica
 let perDistri = custoFabrica * (28/100);
 let perImposto = custoFabrica * (45/100);
 let custoFinal = Number(custoFabrica) + Number(perDistri) + Number(perImposto);
-console.log(`O valor final do veiculo é de R$ ${custoFinal},00`)*/
+console.log(`O valor final do veiculo é de R$ ${custoFinal},00`)
 
 // 12.
-
+let quantidadeCarros:number = leitor.question("Entre com a quantidade de carros vendidos: ");
+let valorTotalVendas:number = leitor.question("Entre com o valor total de vendas: R$ ");
+let salarioFixo:number = leitor.question("Entre com o salário fixo: R$ ");
+let valorCarroVendido:number = leitor.question("Entre com o valor recebido por carro vendido: R$ ");
+let comissao 
 
 
 
