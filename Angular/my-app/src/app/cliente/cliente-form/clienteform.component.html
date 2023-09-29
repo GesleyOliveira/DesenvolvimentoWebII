@@ -2,21 +2,21 @@
   <div class="card-header bg-primary text-light">
     {{title}}
   </div>
-  <form>
+  <form (ngSubmit) = "onSubmit()">
     <div class="form-group">
       <label for="">Nome</label>
-      <input type="text" class="form-control"
-      required minlength="3" id="nome" [(ngModel)]="cliente.nome">
+      <input type="text" class="form-control" #nome="ngModel"
+      required minlength="3" name="nome" [(ngModel)]="cliente.nome">
     </div>
     <div class="form-group">
       <label for="">Limite de Crédito</label>
-      <input type="number" class="form-control"
-      required id="limiteCredito" [(ngModel)]="cliente.limiteCredito">
+      <input type="number" class="form-control" #nome="ngModel"
+      required name="limiteCredito" [(ngModel)]="cliente.limiteCredito">
     </div>
     <div class="form-group">
       <label for="">Endereço</label>
-      <input type="text" class="form-control"
-      required minlength="30" rows="3" id="endereco" [(ngModel)]="cliente.endereco">
+      <input type="text" class="form-control" #nome="ngModel"
+      required minlength="30" rows="3" name="endereco" [(ngModel)]="cliente.endereco">
     </div>
       <button type="submit" class="btn btn-primary">Salvar</button>
         <a class="btn btn-danger" href="">Cancelar</a>
