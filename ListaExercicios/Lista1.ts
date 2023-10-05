@@ -29,6 +29,11 @@ function Ex03(){
     console.log(`Você já viveu ${conversor} dias`);
 }
 
+function Ex04(){
+    var leitor = require("readline-sync");
+    let numero:number = leitor.require("Entre com um número: ");
+    let antes = 
+}
 Ex03()
 
     
