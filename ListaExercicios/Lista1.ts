@@ -2,7 +2,7 @@
 
 function Ex01(){
     var leitor = require("readline-sync");
-    let nome:String = leitor.question("Digite o seu nome: ");
+    let nome:string = leitor.question("Digite o seu nome: ");
     let nomeDividido  = nome.split(" ");
     for(let i=0; i < nomeDividido.length; i++){
         console.log(nomeDividido[i]);
@@ -13,9 +13,9 @@ function Ex01(){
 
 function Ex02(){
     var leitor = require("readline-sync");
-    let nome:String = leitor.question("Digite o seu nome: ");
-    let endereco:String = leitor.question("Digite o seu endereço: ");
-    let idade:Number = leitor.question("Entre com a sua idade: ");
+    let nome:string = leitor.question("Digite o seu nome: ");
+    let endereco:string = leitor.question("Digite o seu endereço: ");
+    let idade:number = leitor.question("Entre com a sua idade: ");
     console.log(`${nome} mora no endereco: ${endereco} e tem ${idade} anos`)
 }
 
@@ -80,9 +80,8 @@ function Ex09(){
     console.log(`O volume utilizado no percurso foi de ${consumoLitros} litros`)
 }
 
-function Ex10(){
 
-}
-Ex09()
+
+Ex09();
 
     

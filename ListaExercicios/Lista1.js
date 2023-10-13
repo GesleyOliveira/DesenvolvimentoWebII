@@ -66,6 +66,4 @@ function Ex09() {
     var consumoLitros = (diferenca / rendimento).toFixed(2);
     console.log("O volume utilizado no percurso foi de ".concat(consumoLitros, " litros"));
 }
-function Ex10() {
-}
-Ex09();
+Ex08();
