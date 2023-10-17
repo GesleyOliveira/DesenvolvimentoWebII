@@ -66,4 +66,51 @@ function Ex09() {
     var consumoLitros = (diferenca / rendimento).toFixed(2);
     console.log("O volume utilizado no percurso foi de ".concat(consumoLitros, " litros"));
 }
-Ex01();
+function Ex10() {
+    var leitor = require("readline-sync");
+    var divida = leitor.question("Entre com o valor da divida: ");
+    var diasAtraso = leitor.question("Entre com a quantidade de dias em atraso: ");
+    var percMulta = leitor.question("Entre com o percentual da multa por dia: ");
+    var total = (((diasAtraso * (percMulta / 100) * divida)) + Number(divida)).toFixed(2);
+    console.log("O valor total a ser pago \u00E9 de R$ ".concat(total));
+}
+function Ex11() {
+    var leitor = require("readline-sync");
+    var x = Number(leitor.question("Entre com o valor de x: "));
+    var y = Number(leitor.question("Entre com o valor de y: "));
+    var z = Number(leitor.question("Entre com o valor de z: "));
+    if (x < z && z < y) {
+        console.log("O valor ".concat(z, " est\u00E1 entre ").concat(x, " e ").concat(y));
+    }
+    else if (y < z && z < x) {
+        console.log("O valor ".concat(z, " est\u00E1 entre ").concat(y, " e ").concat(x));
+    }
+    else {
+        console.log("O valor ".concat(z, " n\u00E3o est\u00E1 entre ").concat(x, " e ").concat(y));
+    }
+}
+function Ex12() {
+    var leitor = require("readline-sync");
+    var numero = Number(leitor.question("Entre com um numero: "));
+    if (numero % 2 == 0) {
+        console.log("O numero ".concat(numero, " e par!"));
+    }
+    else {
+        console.log("O numero ".concat(numero, " nao e par!"));
+    }
+}
+function Ex13() {
+    var leitor = require("readline-sync");
+    var letra = (leitor.question("Entre com o sexo (M/F): ")).toUpperCase();
+    var nome = leitor.question("Entre com o nome: ");
+    if (letra == "M") {
+        console.log("Seja bem-vindo ".concat(nome, "!"));
+    }
+    else if (letra == "F") {
+        console.log("Seja bem-vinda ".concat(nome, "!"));
+    }
+    else {
+        console.log("Letra ".concat(letra, " inv\u00E1lida! Entre com M ou F!"));
+    }
+}
+Ex13();

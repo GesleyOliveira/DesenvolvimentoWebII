@@ -80,8 +80,54 @@ function Ex09(){
     console.log(`O volume utilizado no percurso foi de ${consumoLitros} litros`)
 }
 
+function Ex10(){
+    var leitor = require("readline-sync");
+    let divida:number = leitor.question("Entre com o valor da divida: ");
+    let diasAtraso:number = leitor.question("Entre com a quantidade de dias em atraso: ");
+    let percMulta:number = leitor.question("Entre com o percentual da multa por dia: ");
+    let total = (((diasAtraso * (percMulta / 100) * divida)) + Number(divida)).toFixed(2);
+    console.log(`O valor total a ser pago é de R$ ${total}`);
+}
 
+function Ex11(){
+    var leitor = require("readline-sync");
+    let x = Number(leitor.question("Entre com o valor de x: "));
+    let y = Number(leitor.question("Entre com o valor de y: "));
+    let z = Number(leitor.question("Entre com o valor de z: "));
+    if(x<z && z<y){
+        console.log(`O valor ${z} está entre ${x} e ${y}`);
+    } else if(y<z && z<x){
+        console.log(`O valor ${z} está entre ${y} e ${x}`);
+    } else{
+        console.log(`O valor ${z} não está entre ${x} e ${y}`);
+    }
+    
+}
 
-Ex01();
+function Ex12(){
+    var leitor = require("readline-sync");
+    let numero = Number(leitor.question("Entre com um numero: "));
+    if(numero % 2 == 0){
+        console.log(`O numero ${numero} e par!`);
+    } else {
+        console.log(`O numero ${numero} nao e par!`);
+    }
+}
+
+function Ex13(){
+    var leitor = require("readline-sync");
+    let letra = (leitor.question("Entre com o sexo (M/F): ")).toUpperCase();
+    let nome = leitor.question("Entre com o nome: ");
+    if(letra == "M"){
+        console.log(`Seja bem-vindo ${nome}!`);
+    } else if(letra == "F") {
+        console.log(`Seja bem-vinda ${nome}!`);
+    } else {
+        console.log(`Letra ${letra} inválida! Entre com M ou F!`);
+    }
+    
+}
+
+Ex13();
 
     
