@@ -367,14 +367,36 @@ function Ex22(){
 }
 
 function Ex23(){
-    
+    var leitor = require("readline-sync");
+    let nomeMenorIdade = "";
+    let nome = "";
+    let idade = 0;
+    let menorIdade = 120;
+    for(var i=0; i<3; i++){
+        nome = leitor.question("Entre com o nome: ")
+        idade = Number(leitor.question("Entre com a idade: "));
+        if (idade < menorIdade){
+            menorIdade = idade;
+            nomeMenorIdade = nome;
+        }
+    }
+    console.log(`A pessoa mais nova é ${nomeMenorIdade} com ${menorIdade} anos`);   
+}
+
+function Ex24(){
+    var leitor = require("readline-sync");
+    let numero = Number(leitor.question("Entre com um numero: "));
+    let lista = "";
+    for(var i=1; i<numero; i++){
+        if(i%2!=0){
+            lista += i + " ";
+        }       
+    }
+    console.log(`A lista de numeros impares e ${lista}`);
+
 }
 
 
-
-
-
-
-Ex19();
+Ex24();
 
     

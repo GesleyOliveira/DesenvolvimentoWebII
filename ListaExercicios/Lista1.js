@@ -113,4 +113,277 @@ function Ex13() {
         console.log("Letra ".concat(letra, " inv\u00E1lida! Entre com M ou F!"));
     }
 }
-Ex13();
+function Ex14() {
+    var leitor = require("readline-sync");
+    var temp = Number(leitor.question("Entre com a temperatura °C: "));
+    if (temp <= 18) {
+        console.log("O clima está frio!");
+    }
+    else if (19 <= temp && temp <= 23) {
+        console.log("O clima é agradável!");
+    }
+    else if (24 <= temp && temp <= 35) {
+        console.log("O clima é agradável!");
+    }
+    else if (35 < temp) {
+        console.log("O clima é muito quente!");
+    }
+    else {
+        console.log("Entre com um valor correto em °C!");
+    }
+}
+function Ex15() {
+    var leitor = require("readline-sync");
+    var quarto = Number(leitor.question("Entre com o tipo do quarto (1.Suite, 2.Suite Master, 3.Suite Mega Blaster): "));
+    var horasOuDias = (leitor.question("Entre com a permanencia, sendo H para horas ou D para dias: ")).toUpperCase();
+    var quantidade = Number(leitor.question("Entre com a quantidade de acordo com horas ou dias: "));
+    if (quarto == 1) {
+        var precoHoraPernoite = 30 / 6;
+        var precoHoraDia = 60 / 24;
+        var precoDia = 60;
+        if (horasOuDias == "H") {
+            if (quantidade <= 6) {
+                var calculo = precoHoraPernoite * quantidade;
+                console.log("Valor a pagar pelo quarto Suite, pela permanencia de ".concat(quantidade, " horas, e de R$").concat(calculo, "!"));
+            }
+            else if (6 < quantidade) {
+                var calculo = precoHoraDia * quantidade;
+                console.log("Valor a pagar pelo quarto Suite, pela permanencia de ".concat(quantidade, " horas, e de R$").concat(calculo, "!"));
+            }
+        }
+        else if (horasOuDias == "D") {
+            var calculo = precoDia * quantidade;
+            console.log("Valor a pagar pelo quarto Suite, pela permanencia de ".concat(quantidade, " dias, e de R$").concat(calculo, "!"));
+        }
+        else {
+            console.log("Letra ".concat(horasOuDias, " incorreto!"));
+        }
+    }
+    else if (quarto == 2) {
+        var precoHoraPernoite = 50 / 6;
+        var precoHoraDia = 90 / 24;
+        var precoDia = 90;
+        if (horasOuDias == "H") {
+            if (quantidade <= 6) {
+                var calculo = precoHoraPernoite * quantidade;
+                console.log("Valor a pagar pelo quarto Suite, pela permanencia de ".concat(quantidade, " horas, e de R$").concat(calculo, "!"));
+            }
+            else if (6 < quantidade) {
+                var calculo = precoHoraDia * quantidade;
+                console.log("Valor a pagar pelo quarto Suite, pela permanencia de ".concat(quantidade, " horas, e de R$").concat(calculo, "!"));
+            }
+        }
+        else if (horasOuDias == "D") {
+            var calculo = precoDia * quantidade;
+            console.log("Valor a pagar pelo quarto Suite, pela permanencia de ".concat(quantidade, " dias, e de R$").concat(calculo, "!"));
+        }
+        else {
+            console.log("Letra ".concat(horasOuDias, " incorreto!"));
+        }
+    }
+    else if (quarto == 3) {
+        var precoHoraPernoite = 140 / 6;
+        var precoHoraDia = 140 / 24;
+        var precoDia = 140;
+        if (horasOuDias == "H") {
+            if (quantidade <= 6) {
+                var calculo = precoHoraPernoite * quantidade;
+                console.log("Valor a pagar pelo quarto Suite, pela permanencia de ".concat(quantidade, " horas, e de R$").concat(calculo, "!"));
+            }
+            else if (6 < quantidade) {
+                var calculo = precoHoraDia * quantidade;
+                console.log("Valor a pagar pelo quarto Suite, pela permanencia de ".concat(quantidade, " horas, e de R$").concat(calculo, "!"));
+            }
+        }
+        else if (horasOuDias == "D") {
+            var calculo = precoDia * quantidade;
+            console.log("Valor a pagar pelo quarto Suite, pela permanencia de ".concat(quantidade, " dias, e de R$").concat(calculo, "!"));
+        }
+        else {
+            console.log("Letra ".concat(horasOuDias, " incorreto!"));
+        }
+    }
+    else {
+        console.log("Valor ".concat(quarto, " de quarto incorreto!"));
+    }
+}
+function Ex16() {
+    var leitor = require("readline-sync");
+    var diaSemana = Number(leitor.question("Entre com um dia da semana (1 a 7): "));
+    var diaDaSemana = " ";
+    switch (diaSemana) {
+        case 1:
+            diaDaSemana = "Domingo";
+            break;
+        case 2:
+            diaDaSemana = "Segunda-feira";
+            break;
+        case 3:
+            diaDaSemana = "Terça-feira";
+            break;
+        case 4:
+            diaDaSemana = "Quarta-feira";
+            break;
+        case 5:
+            diaDaSemana = "Quinta-feira";
+            break;
+        case 6:
+            diaDaSemana = "Sexta-feira";
+            break;
+        case 7:
+            diaDaSemana = "Sábado";
+            break;
+        default:
+            diaDaSemana = "Número fora do intervalo (1 a 7)";
+            break;
+    }
+    console.log("O dia da semana correspondente a entrada ".concat(diaSemana, " \u00E9 ").concat(diaDaSemana));
+}
+function Ex17() {
+    var leitor = require("readline-sync");
+    var regiao = (leitor.question("Entre com a regiao do Brasil: ")).toUpperCase();
+    var regioes = [];
+    switch (regiao) {
+        case "NORTE":
+            regioes = ["Amazonas", "Roraima", "Amapa", "Para", "Tocantins", "Rondônia", "Acre"];
+            break;
+        case "NORDESTE":
+            regioes = ["Maranhão", "Piauí", "Ceará", "Rio Grande do Norte", "Pernambuco", "Paraíba", "Sergipe", "Alagoas", "Bahia"];
+            break;
+        case "CENTRO-OESTE":
+            regioes = ["Mato Grosso", "Mato Grosso do Sul", "Goiás"];
+            break;
+        case "SUDESTE":
+            regioes = ["São Paulo", "Rio de Janeiro", "Espírito Santo", "Minas Gerais"];
+            break;
+        case "SUL":
+            regioes = ["Paraná", "Rio Grande do Sul", "Santa Catarina"];
+            break;
+        default:
+            regioes = ["Entre com uma regiao valida!"];
+            break;
+    }
+    console.log("Estados: ".concat(regioes));
+}
+function Ex18() {
+    var leitor = require("readline-sync");
+    var senhaSistemaGerente1 = 123456;
+    var nomeSistemaGerente1 = "Fulaninho";
+    var senhaSistemaGerente2 = 654321;
+    var nomeSistemaGerente2 = "Ciclaninho";
+    var codigoProduto = Number(leitor.question("Entre com o codigo do produto: "));
+    var nomeGerente1 = leitor.question("Entre com o nome do Gerente 1: ");
+    var senhaGerente1 = Number(leitor.question("Entre com a senha do Gerente 1: "));
+    var nomeGerente2 = leitor.question("Entre com o nome do Gerente 2: ");
+    var senhaGerente2 = Number(leitor.question("Entre com a senha do Gerente 2: "));
+    if (nomeGerente1 == nomeSistemaGerente1 && nomeGerente2 == nomeSistemaGerente2) {
+        if (senhaGerente1 == senhaSistemaGerente1 && senhaGerente2 == senhaSistemaGerente2) {
+            console.log("Cancelamento realizado para o produto c\u00F3digo ".concat(codigoProduto, "!"));
+        }
+        else {
+            console.log("Senha incorreta!");
+        }
+    }
+    else {
+        console.log("Credencial nome incorreto!");
+    }
+}
+function Ex19() {
+    var leitor = require("readline-sync");
+    var operacao = Number(leitor.question("Entre com a operacao desejada (1 - SAQUE, 2 - DEPOSITO, 3 - SALDO): "));
+    var saldo = 500;
+    switch (operacao) {
+        case 1:
+            var valorSaque = leitor.question("Entre com o valor do saque: ");
+            if (valorSaque <= saldo) {
+                var novoSaldo = saldo - valorSaque;
+                console.log("Saque realizado! Novo saldo R$ ".concat(novoSaldo));
+            }
+            else if (saldo < valorSaque) {
+                console.log("Saldo insuficiente!");
+            }
+            else {
+                console.log("Entre com um valor válido!");
+            }
+            break;
+        case 2:
+            var valorDeposito = Number(leitor.question("Entre com o valor do deposito: "));
+            if (0 < valorDeposito) {
+                var novoSaldo = saldo + valorDeposito;
+                console.log("Deposito realizado! Novo saldo R$ ".concat(novoSaldo));
+            }
+            else if (0 == valorDeposito) {
+                console.log("Entre com um valor maior do que zero!");
+            }
+            else {
+                console.log("Entre com um valor válido!");
+            }
+            break;
+        case 3:
+            console.log("Saldo atual de ".concat(saldo, ". Agradecemos por usar os nossos servicos!"));
+            break;
+        default:
+            console.log("Valor de operação inválido!");
+    }
+}
+function Ex20() {
+    var leitor = require("readline-sync");
+    var contador = 0;
+    var soma = 0;
+    while (contador < 10) {
+        var numero = Number(leitor.question("Entre com um número"));
+        soma += numero;
+        contador++;
+    }
+    console.log("A soma dos valores \u00E9 ".concat(soma));
+}
+function Ex21() {
+    var leitor = require("readline-sync");
+    var i = 0;
+    var soma = 0;
+    var media = 0;
+    do {
+        var numero = Number(leitor.question("Entre com um número"));
+        soma += numero;
+        media = numero / 10;
+        i += 1;
+    } while (i < 10);
+    console.log("A media dos valores \u00E9 ".concat(media));
+}
+function Ex22() {
+    var leitor = require("readline-sync");
+    var multiplicacao = 0;
+    for (var i = 0; i < 10; i++) {
+        var numero = Number(leitor.question("Entre com um número"));
+        multiplicacao *= numero;
+    }
+    console.log("A media dos valores \u00E9 ".concat(multiplicacao));
+}
+function Ex23() {
+    var leitor = require("readline-sync");
+    var nomeMenorIdade = "";
+    var nome = "";
+    var idade = 0;
+    var menorIdade = 120;
+    for (var i = 0; i < 3; i++) {
+        nome = leitor.question("Entre com o nome: ");
+        idade = Number(leitor.question("Entre com a idade: "));
+        if (idade < menorIdade) {
+            menorIdade = idade;
+            nomeMenorIdade = nome;
+        }
+    }
+    console.log("A pessoa mais nova \u00E9 ".concat(nomeMenorIdade, " com ").concat(menorIdade, " anos"));
+}
+function Ex24() {
+    var leitor = require("readline-sync");
+    var numero = Number(leitor.question("Entre com um numero: "));
+    var lista = "";
+    for (var i = 1; i < numero; i++) {
+        if (i % 2 != 0) {
+            lista += i + " ";
+        }
+    }
+    console.log("A lista de numeros impares e ".concat(lista));
+}
+Ex24();
