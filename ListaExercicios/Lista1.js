@@ -386,4 +386,124 @@ function Ex24() {
     }
     console.log("A lista de numeros impares e ".concat(lista));
 }
-Ex24();
+function Ex25() {
+    var leitor = require("readline-sync");
+    var anoNascimento = Number(leitor.question("Entre com o ano de nascimento: "));
+    var anoAtual = 2023;
+    var anosIdade = 0;
+    var lista = "";
+    for (var i = anoNascimento; i < anoAtual + 1; i++) {
+        lista += anoNascimento + " : " + anosIdade + " anos, ";
+        anosIdade++;
+        anoNascimento++;
+    }
+    console.log("Cronologia: ".concat(lista));
+}
+function Ex26() {
+    var leitor = require("readline-sync");
+    var qtdFunc = Number(leitor.question("Entre com a quantidade de funcionarios: "));
+    var nome = "";
+    var tempoEmpresa = 0;
+    var direitoFerias = 0;
+    for (var i = 0; i < qtdFunc; i++) {
+        nome = leitor.question("Entre com o nome do funcionario: ");
+        tempoEmpresa = Number(leitor.question("Entre com o tempo de empresa em meses: "));
+        if (12 < tempoEmpresa) {
+            console.log("".concat(nome, " tem direito a ferias!"));
+            direitoFerias += 1;
+        }
+        else {
+            console.log("".concat(nome, " n\u00E3o tem direito a ferias!"));
+        }
+    }
+    console.log("Ha ".concat(direitoFerias, " funcionarios com direito a ferias!"));
+}
+function Ex27() {
+    var leitor = require("readline-sync");
+    var qtdAlunos = Number(leitor.question("Entre com a quantidade de alunos: "));
+    var nome = "";
+    var nota1 = 0;
+    var nota2 = 0;
+    for (var i = 0; i < qtdAlunos; i++) {
+        nome = leitor.question("Entre com o nome do aluno: ");
+        nota1 = Number(leitor.question("Entre com a primeira nota: "));
+        nota2 = Number(leitor.question("Entre com a segunda nota: "));
+        var media = (nota1 + nota2) / 2;
+        if (6 <= media) {
+            console.log("Aluno(a) ".concat(nome, " Aprovado(a)!"));
+        }
+        else {
+            console.log("Aluno(a) ".concat(nome, " Reprovado(a)!"));
+        }
+    }
+}
+function Ex28() {
+    for (var i = 1; i < 10; i++) {
+        for (var y = 1; y < 11; y++) {
+            var multiplicacao = i * y;
+            console.log("".concat(i, " X ").concat(y, " = ").concat(multiplicacao));
+        }
+    }
+}
+function Ex29() {
+    var leitor = require("readline-sync");
+    var total = 0;
+    var qtd = 0;
+    while (true) {
+        while (true) {
+            var item = Number(leitor.question("Entre com o valor: "));
+            total += item;
+            qtd += 1;
+            var maisItens = (leitor.question("Ha mais itens para ser processado? (S/N): ")).toUpperCase();
+            if (maisItens == "N") {
+                console.log("Quantidade: ".concat(qtd, " itens - Total: R$").concat(total, ",00"));
+                var total = 0;
+                var qtd = 0;
+                break;
+            }
+            else if (maisItens == "S") {
+                continue;
+            }
+            else {
+                console.log("Digito: ".concat(maisItens, " inv\u00E1lido!"));
+                continue;
+            }
+        }
+        var fecharCaixa = (leitor.question("Deseja fechar o caixa? (S/N): ")).toUpperCase();
+        if (fecharCaixa == "S") {
+            break;
+        }
+        else if (fecharCaixa == "N") {
+            continue;
+        }
+        else {
+            console.log("Digito: ".concat(fecharCaixa, " inv\u00E1lido!"));
+            continue;
+        }
+    }
+}
+function Ex30() {
+    var leitor = require("readline-sync");
+    var mediaTotalTurma = "";
+    var qtdTurmas = Number(leitor.question("Entre com a quantidade de turmas: "));
+    for (var i = 0; i < qtdTurmas; i++) {
+        var qtdAlunos = Number(leitor.question("Entre com a quantidade de alunos da turma ".concat(i + 1, ": ")));
+        var mediaAluno = 0;
+        for (var y = 0; y < qtdAlunos; y++) {
+            mediaAluno += Number(leitor.question("Entre com a media do aluno ".concat(y + 1, ": ")));
+        }
+        var mediaTurma = mediaAluno / qtdAlunos;
+        mediaTotalTurma += "A media da turma " + (i + 1) + " e: " + mediaTurma + ", ";
+    }
+    console.log(mediaTotalTurma);
+}
+function Ex31() {
+    var leitor = require("readline-sync");
+    var qtdUsuarios = Number(leitor.question("Entre com a quantidade de usuarios: "));
+    var padrao = "*";
+    for (var i = 0; i < qtdUsuarios; i++) {
+        console.log(padrao);
+        padrao += "*";
+    }
+}
+Ex31();

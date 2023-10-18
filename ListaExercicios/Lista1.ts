@@ -393,10 +393,129 @@ function Ex24(){
         }       
     }
     console.log(`A lista de numeros impares e ${lista}`);
+}
 
+function Ex25(){
+    var leitor = require("readline-sync");
+    let anoNascimento = Number(leitor.question("Entre com o ano de nascimento: "));
+    var anoAtual = 2023;
+    let anosIdade = 0;
+    let lista = "";
+    for(var i=anoNascimento; i<anoAtual+1; i++){
+        lista += anoNascimento + " : " + anosIdade + " anos, ";
+        anosIdade ++;
+        anoNascimento ++;
+    }
+    console.log(`Cronologia: ${lista}`);
+}
+
+function Ex26(){
+    var leitor = require("readline-sync");
+    let qtdFunc = Number(leitor.question("Entre com a quantidade de funcionarios: "));
+    let nome = "";
+    let tempoEmpresa = 0;
+    let direitoFerias = 0;
+    for(var i=0; i<qtdFunc; i++){
+        nome = leitor.question("Entre com o nome do funcionario: ");
+        tempoEmpresa = Number(leitor.question("Entre com o tempo de empresa em meses: "));
+        if(12 < tempoEmpresa){
+            console.log(`${nome} tem direito a ferias!`);
+            direitoFerias += 1;
+        } else {
+            console.log(`${nome} não tem direito a ferias!`);
+        }
+    }
+    console.log(`Ha ${direitoFerias} funcionarios com direito a ferias!`);
+}
+
+function Ex27(){
+    var leitor = require("readline-sync");
+    let qtdAlunos = Number(leitor.question("Entre com a quantidade de alunos: "));
+    let nome = "";
+    let nota1 = 0;
+    let nota2 = 0;
+    for(var i=0; i<qtdAlunos; i++){
+        nome = leitor.question("Entre com o nome do aluno: ");
+        nota1 = Number(leitor.question("Entre com a primeira nota: "));
+        nota2 = Number(leitor.question("Entre com a segunda nota: "));
+        let media = (nota1 + nota2) / 2;
+        if(6 <= media){
+            console.log(`Aluno(a) ${nome} Aprovado(a)!`);
+        } else {
+            console.log(`Aluno(a) ${nome} Reprovado(a)!`);
+        }
+    }
+}
+
+function Ex28(){
+    for(var i=1; i<10; i++){
+        for(var y=1; y<11; y++){
+            let multiplicacao = i * y;
+            console.log(`${i} X ${y} = ${multiplicacao}`);
+        }
+    }
+}
+
+function Ex29(){
+    var leitor = require("readline-sync");
+    var total = 0;
+    var qtd = 0;
+    while (true){
+        while (true){
+            let item = Number(leitor.question("Entre com o valor: "));
+            total += item;
+            qtd += 1
+            let maisItens = (leitor.question("Ha mais itens para ser processado? (S/N): ")).toUpperCase();
+            if(maisItens == "N"){
+                console.log(`Quantidade: ${qtd} itens - Total: R$${total},00`);
+                var total = 0;
+                var qtd = 0;
+                break;
+            } else if(maisItens == "S"){
+                continue;
+            } else {
+                console.log(`Digito: ${maisItens} inválido!`);
+                continue;
+            }
+        }
+        let fecharCaixa = (leitor.question("Deseja fechar o caixa? (S/N): ")).toUpperCase();
+        if(fecharCaixa == "S"){
+            break;
+        } else if(fecharCaixa == "N") {
+            continue;
+        } else {
+            console.log(`Digito: ${fecharCaixa} inválido!`);
+                continue;
+        }
+    }
+}
+
+function Ex30(){
+    var leitor = require("readline-sync");
+    let mediaTotalTurma = "";
+    let qtdTurmas = Number(leitor.question("Entre com a quantidade de turmas: "));
+    for(var i=0; i<qtdTurmas; i++){
+        let qtdAlunos = Number(leitor.question(`Entre com a quantidade de alunos da turma ${i+1}: `));
+        let mediaAluno = 0;
+        for(var y=0; y<qtdAlunos; y++){
+            mediaAluno += Number(leitor.question(`Entre com a media do aluno ${y+1}: `));
+        }
+        let mediaTurma = mediaAluno / qtdAlunos
+        mediaTotalTurma += "A media da turma " + (i+1) + " e: " + mediaTurma + ", ";
+    }
+    console.log(mediaTotalTurma);
+}
+
+function Ex31(){
+    var leitor = require("readline-sync");
+    let qtdUsuarios = Number(leitor.question("Entre com a quantidade de usuarios: "));
+    let padrao = "*";
+    for(var i = 0; i < qtdUsuarios; i++){
+        console.log(padrao);
+        padrao += "*"
+    }
 }
 
 
-Ex24();
 
-    
+
