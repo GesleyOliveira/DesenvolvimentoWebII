@@ -108,3 +108,16 @@ function Ex06(){
     }
   
 }
+
+function Ex07(){
+    var leitor = require("readline-sync");
+    var matriz: number[] = [];
+    for(var i = 0; )
+    let valores = leitor 
+    
+    var matriz1 = [ [1,2,3],
+                    [4,5,6],
+                    [7,8,9] ];
+}
+
+Ex06()
