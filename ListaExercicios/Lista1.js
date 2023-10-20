@@ -506,4 +506,3 @@ function Ex31() {
         padrao += "*";
     }
 }
-Ex31();

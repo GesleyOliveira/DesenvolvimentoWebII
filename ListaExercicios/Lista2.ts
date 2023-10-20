@@ -298,7 +298,7 @@ function Ex11(){
     const notas: number[] = [];
     
     for (let i = 0; i < numeroDeAlunos; i++) {
-        const nota = Number(leitor.question(`Digite a nota do aluno ${i + 1}: `);
+        const nota = Number(leitor.question(`Digite a nota do aluno ${i + 1}: `));
         notas.push(nota);
     }
         
@@ -405,9 +405,408 @@ function Ex18(a: number, b:number, c:number): number{
 
 // Exercicio 19, lista 2
 
-function Dado(): number {
+function Ex19_Dado(): number {
     return Math.floor(Math.random() * 6) + 1;
 }
 
+// Exercicio 20, lista 2
 
-Ex19()
+function Ex20(): number[] {
+    const resultado: number[] = [0, 0, 0, 0, 0, 0];
+  
+    for (let i = 0; i < 1000000; i++) {
+      const numeroLancado = Math.floor(Math.random() * 6) + 1; 
+      resultado[numeroLancado - 1]++;
+    }
+  
+    return resultado;
+
+}
+
+const resultados = Ex20();
+
+for (let i = 0; i < 6; i++) {
+  const numero = i + 1;
+  const porcentagem = (resultados[i] / 1000000) * 100;
+  console.log(`Número ${numero}: ${porcentagem.toFixed(2)}%`);
+}
+
+// Exercicio 21, lista 2
+
+function Ex21(){
+    var leitor = require("readline-sync");
+    let escolha = (leitor.question("A entrada sera Celsius ou Farenheit? (C/F): ")).toUpperCase();
+    switch(escolha){
+        case "C":
+            var temperaturaF = Number(leitor.question("Qual a temperatura em Farenheit? "));
+            var conversao = (9 * (temperaturaF/5)) + 32;
+            console.log(`A temperatura ${temperaturaF}°F é ${conversao}°C`);
+            break;
+        case "F":
+            var temperaturaC = Number(leitor.question("Qual a temperatura em Celsius? "));
+            var conversao = (9 * (temperaturaC/5)) + 32;
+            console.log(`A temperatura ${temperaturaC}°C é ${conversao}°F`);
+            break;
+        default:
+            console.log(`Opção ${escolha} inválida!`);
+    }
+
+}
+
+// Exercicio 22, lista 2
+
+function Ex22(notas: number[]): void {
+    if (notas.length !== 3) {
+        console.log("Por favor, forneça exatamente três notas.");
+        return;
+    }
+
+ 
+    const notasOrdenadas = notas.slice().sort((a, b) => b - a);
+
+    const notaMaisAlta = notasOrdenadas[0];
+    const notaMaisBaixa = notasOrdenadas[2];
+    const mediaDasTresNotas = notas.reduce((total, nota) => total + nota, 0) / 3;
+    const mediaDasDuasMaiores = (notasOrdenadas[0] + notasOrdenadas[1]) / 2;
+
+    console.log(`Notas: ${notas.join(", ")}`);
+    console.log(`Média das três notas: ${mediaDasTresNotas.toFixed(2)}`);
+    console.log(`Média das duas maiores notas: ${mediaDasDuasMaiores.toFixed(2)}`);
+    console.log(`Nota mais alta: ${notaMaisAlta}`);
+    console.log(`Nota mais baixa: ${notaMaisBaixa}`);
+}
+
+const notas = [7.5, 8.0, 6.5]; 
+Ex22(notas);
+
+// Exercicio 23, lista 2
+
+class Filme {
+    private titulo: string;
+    private duracaoEmMinutos: number;
+  
+    constructor(titulo: string, duracaoEmMinutos: number) {
+      this.titulo = titulo;
+      this.duracaoEmMinutos = duracaoEmMinutos;
+    }
+  
+    getTitulo(): string {
+      return this.titulo;
+    }
+  
+    setTitulo(titulo: string): void {
+      this.titulo = titulo;
+    }
+  
+    getDuracaoEmMinutos(): number {
+      return this.duracaoEmMinutos;
+    }
+  
+    setDuracaoEmMinutos(duracaoEmMinutos: number): void {
+      this.duracaoEmMinutos = duracaoEmMinutos;
+    }
+  
+    exibirDuracaoEmHoras(): void {
+      const horas = Math.floor(this.duracaoEmMinutos / 60);
+      const minutos = this.duracaoEmMinutos % 60;
+      console.log(`O filme ${this.titulo} possui ${horas} horas e ${minutos} minutos de duração.`);
+    }
+  }
+  
+
+const meuFilme = new Filme("Titanic", 194);
+meuFilme.exibirDuracaoEmHoras();
+  
+// Exercicio 24, lista 2
+
+class TestarFilme {
+    public static main(): void {
+      const umFilmeQualquer = new Filme("Os Vingadores", 142);
+  
+
+      umFilmeQualquer.exibirDuracaoEmHoras();
+  
+      const meuFilmeFavorito = new Filme("Meu Filme Favorito", 100);
+  
+
+      meuFilmeFavorito.setDuracaoEmMinutos(214); // Substitua o valor correto da duração aqui
+      meuFilmeFavorito.exibirDuracaoEmHoras();
+  
+      console.log(`\nf) Os filmes no catálogo são ${umFilmeQualquer.getTitulo()} e ${meuFilmeFavorito.getTitulo()}`);
+    }
+}
+
+TestarFilme.main();
+
+
+// Exercicio 25, lista 2
+
+class Livro {
+    private titulo: string;
+    private qtdPaginas: number;
+    private paginasLidas: number;
+  
+    constructor(titulo: string, qtdPaginas?: number, paginasLidas?: number) {
+      this.titulo = titulo;
+      this.qtdPaginas = qtdPaginas || 0;
+      this.paginasLidas = paginasLidas || 0;
+    }
+  
+    getTitulo(): string {
+      return this.titulo;
+    }
+  
+    setTitulo(titulo: string): void {
+      this.titulo = titulo;
+    }
+  
+    getQtdPaginas(): number {
+      return this.qtdPaginas;
+    }
+  
+    setQtdPaginas(qtdPaginas: number): void {
+      this.qtdPaginas = qtdPaginas;
+    }
+  
+    getPaginasLidas(): number {
+      return this.paginasLidas;
+    }
+  
+    setPaginasLidas(paginasLidas: number): void {
+      this.paginasLidas = paginasLidas;
+    }
+  
+    verificarProgresso(): void {
+      const porcentagem = (this.paginasLidas * 100) / this.qtdPaginas;
+      console.log(`Você já leu ${porcentagem.toFixed(2)}% do livro.`);
+    }
+  }
+
+// Exercicio 26, lista 2
+  
+  class TestarLivros {
+    public static main(): void {
+      const pequenoPrincipe = new Livro("O Pequeno Príncipe");
+      pequenoPrincipe.setQtdPaginas(98);
+  
+      console.log(`O livro ${pequenoPrincipe.getTitulo()} possui ${pequenoPrincipe.getQtdPaginas()} páginas.`);
+  
+      pequenoPrincipe.setPaginasLidas(20);
+      console.log("Verificando o progresso após ler 20 páginas:");
+      pequenoPrincipe.verificarProgresso();
+  
+      pequenoPrincipe.setPaginasLidas(50);
+      console.log("Verificando o progresso após ler 50 páginas:");
+      pequenoPrincipe.verificarProgresso();
+  
+      const meuLivro = new Livro("A Bíblia Sagrada", 368, 1); // 
+      console.log(`Livro em progresso: ${meuLivro.getTitulo()}`);
+      console.log(`Total de páginas: ${meuLivro.getQtdPaginas()}`);
+      console.log(`Páginas lidas: ${meuLivro.getPaginasLidas()}`);
+      console.log(`O livro ${meuLivro.getTitulo()} possui ${meuLivro.getQtdPaginas()} páginas.`);
+      meuLivro.verificarProgresso();
+    }
+  }
+  
+TestarLivros.main();
+
+// Exercicio 27, lista 2
+
+class Veiculo {
+    private marca: string;
+    private modelo: string;
+    private velocidadeAtual: number;
+  
+    constructor(marca: string, modelo: string) {
+      this.marca = marca;
+      this.modelo = modelo;
+      this.velocidadeAtual = 0;
+    }
+  
+    getMarca(): string {
+      return this.marca;
+    }
+  
+    setMarca(marca: string): void {
+      this.marca = marca;
+    }
+  
+    getModelo(): string {
+      return this.modelo;
+    }
+  
+    setModelo(modelo: string): void {
+      this.modelo = modelo;
+    }
+  
+    getVelocidadeAtual(): number {
+      return this.velocidadeAtual;
+    }
+  
+    acelerar(valor: number): void {
+      this.velocidadeAtual += valor;
+    }
+  
+    frear(valor: number): void {
+      this.velocidadeAtual -= valor;
+    }
+  
+    imprimirInformacoes(): void {
+      console.log(`Marca: ${this.marca}`);
+      console.log(`Modelo: ${this.modelo}`);
+      console.log(`Velocidade Atual: ${this.velocidadeAtual} km/h`);
+    }
+  }
+  
+  class Carro extends Veiculo {
+    private numeroPortas: number;
+  
+    constructor(marca: string, modelo: string, numeroPortas: number) {
+      super(marca, modelo);
+      this.numeroPortas = numeroPortas;
+    }
+  
+    getNumeroPortas(): number {
+      return this.numeroPortas;
+    }
+  
+    setNumeroPortas(numeroPortas: number): void {
+      this.numeroPortas = numeroPortas;
+    }
+  
+    imprimirInformacoes(): void {
+      super.imprimirInformacoes();
+      console.log(`Número de Portas: ${this.numeroPortas}`);
+    }
+  }
+  
+  class Moto extends Veiculo {
+    private cilindradas: number;
+  
+    constructor(marca: string, modelo: string, cilindradas: number) {
+      super(marca, modelo);
+      this.cilindradas = cilindradas;
+    }
+  
+    getCilindradas(): number {
+      return this.cilindradas;
+    }
+  
+    setCilindradas(cilindradas: number): void {
+      this.cilindradas = cilindradas;
+    }
+  
+    imprimirInformacoes(): void {
+      super.imprimirInformacoes();
+      console.log(`Cilindradas: ${this.cilindradas}`);
+    }
+  }
+
+// Exercicio 28, lista 2
+
+  class Contato {
+    private nome: string;
+    private telefone: string;
+  
+    constructor(nome: string, telefone: string) {
+      this.nome = nome;
+      this.telefone = telefone;
+    }
+  
+    getNome(): string {
+      return this.nome;
+    }
+  
+    setNome(nome: string): void {
+      this.nome = nome;
+    }
+  
+    getTelefone(): string {
+      return this.telefone;
+    }
+  
+    setTelefone(telefone: string): void {
+      this.telefone = telefone;
+    }
+  }
+
+  // Exercicio 29, lista 2
+  
+  class Agenda {
+    private agendaDeContatos: Contato[] = [];
+  
+    main(): void {
+      var leitor = require("readline-sync");
+      let opcao = 0;
+      while (opcao !== 5) {
+        console.log("Escolha uma opção:");
+        console.log("1. Cadastrar Contato");
+        console.log("2. Buscar Contato");
+        console.log("3. Excluir Contato");
+        console.log("4. Imprimir Agenda");
+        console.log("5. Sair");
+        opcao = Number(leitor.question("Opcao: "));
+  
+        switch (opcao) {
+          case 1:
+            const nome = leitor.question("Digite o nome do contato: ");
+            const telefone = leitor.question("Digite o telefone do contato: ");
+            const novoContato = new Contato(nome, telefone);
+            this.agendaDeContatos.push(novoContato);
+            break;
+          case 2:
+            const nomeBusca = leitor.question("Digite o nome do contato a buscar: ");
+            const contatoEncontrado = this.buscarContato(nomeBusca);
+            if (contatoEncontrado) {
+              console.log(`Telefone do contato ${contatoEncontrado.getNome()}: ${contatoEncontrado.getTelefone()}`);
+            } else {
+              console.log("Contato não encontrado.");
+            }
+            break;
+          case 3:
+            const nomeExclusao = leitor.question("Digite o nome do contato a excluir: ");
+            this.excluirContato(nomeExclusao);
+            break;
+          case 4:
+            this.imprimirAgenda();
+            break;
+          case 5:
+            console.log("Encerrando a execução.");
+            break;
+          default:
+            console.log("Opção inválida. Tente novamente.");
+            break;
+        }
+      }
+    }
+  
+    buscarContato(nome: string): Contato | undefined {
+      return this.agendaDeContatos.find((contato) => contato.getNome() === nome);
+    }
+  
+    excluirContato(nome: string): void {
+      const index = this.agendaDeContatos.findIndex((contato) => contato.getNome() === nome);
+      if (index !== -1) {
+        this.agendaDeContatos.splice(index, 1);
+        console.log("Contato excluído com sucesso.");
+      } else {
+        console.log("Contato não encontrado para exclusão.");
+      }
+    }
+  
+    imprimirAgenda(): void {
+      console.log("Agenda de Contatos:");
+      this.agendaDeContatos.forEach((contato) => {
+        console.log(`Nome: ${contato.getNome()}, Telefone: ${contato.getTelefone()}`);
+      });
+    }
+  }
+  
+const minhaAgenda = new Agenda();
+minhaAgenda.main();
+  
+
+  
+
+
+  
