@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header bg-primary text-light">
+    {{title}}
+  </div>
+  <form (ngSubmit) = "onSubmit()">
+    <div class="form-group">
+      <label for="">Nome</label>
+      <input type="text" class="form-control" #name="ngModel"
+      required minlength="3" name="nome" [(ngModel)]="cliente.nome">
+    </div>
+    <div class="form-group">
+      <label for="">Limite de Crédito</label>
+      <input type="number" class="form-control" #limiteCredito="ngModel"
+      required name="limiteCredito" [(ngModel)]="cliente.limiteCredito">
+    </div>
+    <div class="form-group">
+      <label for="">Endereço</label>
+      <input type="text" class="form-control" #endereco="ngModel"
+      required minlength="30" rows="3" name="endereco" [(ngModel)]="cliente.endereco">
+    </div>
+      <button type="submit" class="btn btn-primary">Salvar</button>
+        <a class="btn btn-danger" href="">Cancelar</a>
+
+  </form>
+</div>
