@@ -111,8 +111,7 @@ function Ex06(){
   
     if (acertos === 13) {
       console.log("GANHADOR, PARABÉNS!");
-    }
-    }
+
   
 }
 
