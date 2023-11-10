@@ -1,0 +1,28 @@
+<div class="card">
+
+    <div class="card-header bg-primary text-light">
+        {{title}}
+    </div>
+
+    <form class="form-group m-2" (ngSubmit)="ngOnSubmit()">
+
+        <div class="form-group">
+            <label for="nome">Descrição</label>
+            <input type="text" class="form-control" required minlength="3" id="descricao" name="descricao"  [(ngModel)]="produto.descricao">
+        </div>
+        
+        <div class="form-group">
+            <label for="endereco">Peso</label>
+            <input type="number" rows="3" class="form-control" required minlength="3" id="peso" name="peso" [(ngModel)]="produto.peso">
+        </div>
+
+        
+        <div class="form-group">
+            <label for="limiteCredito">Preço</label>
+            <input type="number" class="form-control" required minlength="3" id="preco" name="preco" [(ngModel)]="produto.preco">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a class="btn btn-seconday m1-2" href="">Cancelar</a>
+    </form>
+</div>
