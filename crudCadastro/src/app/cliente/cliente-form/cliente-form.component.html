@@ -10,18 +10,18 @@
             <label for="nome">Nome</label>
             <input type="text" class="form-control" required minlength="3" id="nome" name="nome"  [(ngModel)]="cliente.nome">
         </div>
-        
+
         <div class="form-group">
             <label for="endereco">Endereço</label>
             <input type="text" rows="3" class="form-control" required minlength="3" id="endereco" name="endereco" [(ngModel)]="cliente.endereco">
         </div>
 
-        
+
         <div class="form-group">
             <label for="limiteCredito">Limite de Crédito</label>
             <input type="text" class="form-control" required minlength="3" id="limiteCredito" name="limiteCredito" [(ngModel)]="cliente.limiteCredito">
         </div>
-        
+
         <button type="submit" class="btn btn-primary">Salvar</button>
         <a class="btn btn-seconday m1-2" href="">Cancelar</a>
     </form>
